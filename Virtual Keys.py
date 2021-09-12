@@ -20,14 +20,46 @@ def redrawGamewindow():
         win.blit(keyboardLong, (141,220))
     pygame.display.update()
 
-def highlightKey():
-    if True:
-        pygame.draw.rect(win, (0, 0, 255), (x_pos, y_pos, 64, 86))
-    pygame.display.update()
-
-
 #musical components
 notes = ['c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4', 'f4', 'g4', 'a4', 'b4', 'c5']
+
+'''
+def highlightKey():
+    if True:
+        for i in range(14):
+            if notes[i] == 'c3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos, y_pos, 64, 86))
+            elif notes[i] == 'd3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64, y_pos, 64, 86))
+            elif notes[i] == 'e3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos, y_pos, 64, 86))
+            elif notes[i] == 'f3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 2, y_pos + 64 * 3, 64, 86))
+            elif notes[i] == 'g3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 *4, y_pos, 64, 86))
+            elif notes[i] == 'a3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos+ 64 * 5, y_pos , 64, 86))
+            elif notes[i] == 'b3':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 6, y_pos, 64, 86))
+            elif notes[i] == 'c4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 7, y_pos, 64, 86))
+            elif notes[i] == 'd4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos, y_pos + 64 * 8, 64, 86))
+            elif notes[i] == 'e4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 9, y_pos, 64, 86))
+            elif notes[i] == 'f4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 10, y_pos, 64, 86))
+            elif notes[i] == 'g4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos+ 64 * 11, y_pos , 64, 86))
+            elif notes[i] == 'a4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos  + 64 * 12, y_pos, 64, 86))
+            elif notes[i] == 'b4':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 13, y_pos, 64, 86))
+            elif notes[i] == 'c5':
+                pygame.draw.rect(win, (100, 100, 100), (x_pos + 64 * 14, y_pos, 64, 86))
+        pygame.display.update()
+'''
+
 
 #songs
 happy_bday = ['g3', 'g3', 'a3', 'rest', 'g3', 'rest', 'c4', 'rest', 'b3', 'rest', 'rest', 'rest', 
