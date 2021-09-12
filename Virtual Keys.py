@@ -303,7 +303,7 @@ while run:
     '''
     
     if keys[pygame.K_a]:
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[0].play()
         elif (instrument is 'guitar'):
@@ -316,7 +316,7 @@ while run:
             saxSounds[0].play()
     if keys[pygame.K_s]:
         x += 64
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[1].play()
         elif (instrument is 'guitar'):
@@ -329,7 +329,7 @@ while run:
             saxSounds[1].play()
     if keys[pygame.K_d]:
         x += (64 * 2)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[2].play()
         elif (instrument is 'guitar'):
@@ -342,7 +342,7 @@ while run:
             saxSounds[2].play()
     if keys[pygame.K_f]:
         x += (64 * 3)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[3].play()
         elif (instrument is 'guitar'):
@@ -355,7 +355,7 @@ while run:
             saxSounds[3].play()
     if keys[pygame.K_g]:
         x += (64 * 4)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[4].play()
         elif (instrument is 'guitar'):
@@ -368,7 +368,7 @@ while run:
             saxSounds[4].play()
     if keys[pygame.K_h]:
         x += (64 * 5)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[5].play()
         elif (instrument is 'guitar'):
@@ -381,7 +381,7 @@ while run:
             saxSounds[5].play()
     if keys[pygame.K_j]:
         x += (64 * 6)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[6].play()
         elif (instrument is 'guitar'):
@@ -394,7 +394,7 @@ while run:
             saxSounds[6].play()
     if keys[pygame.K_q]:
         x += (64 * 7)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[7].play()
         elif (instrument is 'guitar'):
@@ -407,7 +407,7 @@ while run:
             saxSounds[7].play()
     if keys[pygame.K_w]:
         x += (64 * 8)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[8].play()
         elif (instrument is 'guitar'):
@@ -420,7 +420,7 @@ while run:
             saxSounds[8].play()
     if keys[pygame.K_e]:
         x += (64 * 9)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[9].play()
         elif (instrument is 'guitar'):
@@ -433,7 +433,7 @@ while run:
             saxSounds[9].play()
     if keys[pygame.K_r]:
         x += (64 * 10)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[10].play()
         elif (instrument is 'guitar'):
@@ -446,7 +446,7 @@ while run:
             saxSounds[10].play()
     if keys[pygame.K_t]:
         x += (64 * 11)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[11].play()
         elif (instrument is 'guitar'):
@@ -459,7 +459,7 @@ while run:
             saxSounds[11].play()
     if keys[pygame.K_y]:
         x += (64 * 12)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[12].play()
         elif (instrument is 'guitar'):
@@ -472,7 +472,7 @@ while run:
             saxSounds[12].play()
     if keys[pygame.K_u]:
         x += (64 * 13)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[13].play()
         elif (instrument is 'guitar'):
@@ -485,7 +485,7 @@ while run:
             saxSounds[13].play()
     if keys[pygame.K_i]:
         x += (64 * 14)
-        highlightKey()
+        #highlightKey()
         if (instrument is 'piano'):
             pianoSounds[14].play()
         elif (instrument is 'guitar'):
