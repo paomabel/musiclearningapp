@@ -1,27 +1,14 @@
-import pygame, sys, time
+import pygame, sys  
+import time
 pygame.init()
 
 # Game Screen
 #1250, 700
 #800. 437
 
-keyboardLong = pygame.image.load('Lettered Keyboard Long.png')
-
 res = (800,437)
 screen = pygame.display.set_mode(res)
 
-
-x_pos = 141
-y_pos = 390
-#width = 1250 #800
-#height = 700 #437
-#win = pygame.display.set_mode((width,height))
-#win.fill((199,187,143))
-#pygame.display.set_caption("Free Play")
-
-
-instrumentSound = ''
-playType =''
 
 #Declaring colors
 white = (255,255,255)
@@ -33,34 +20,15 @@ black = (0,0,0)
 light_gray = (170,170,170)
 dark_gray = (100,100,100)
 light_red = (191, 71, 71)
-dark_red = (158, 35, 35)
+dark_red = (139, 20, 20)
+light_green = (97, 168, 74)
+dark_green = (50, 117, 29)
 
-gui_font = pygame.font.Font(None,30)
-
-#Button Info
-rectHeight = 100
-rectWidth = 300
-rectDimensions = (rectHeight, rectWidth)
-#leftButtonX = 75
-#middleButtonX = 475
-#rightButtonX = 875
-oneButtonX = 75
-twoButtonX = 425
-topButtonY = 75
-midButtonY = 150
-botButtonY = 225
-
-
-buttonFont = pygame.font.SysFont('Corbel',55, bold = True)
-backButtonFont = pygame.font.SysFont('Corbel',20, bold = True)
-pianoButton = buttonFont.render('PIANO' , True , white)
-guitarButton = buttonFont.render('GUITAR', True, white)
-freeButton = buttonFont.render('FREE PLAY', True, white)
-autoButton = buttonFont.render('AUTO PLAY', True, white)
-easyButton = buttonFont.render('EASY', True, white)
-hardButton = buttonFont.render('HARD', True, white)
-backButton = backButtonFont.render('BACK', True, white)
-
+#Actual music
+keyboardLong = pygame.image.load('Lettered Keyboard Long.png')
+instrumentSound = ''
+#playType =''
+ 
 ########################################################################################################################################
 
 #musical components
@@ -86,9 +54,9 @@ heart_and_soul = ['rest', 'c4', 'rest', 'c4', 'e4', 'rest', 'rest', 'e4', 'a3', 
 'rest', 'rest', 'rest', 'rest', 'rest', 'c4', 'rest', 'rest', 'rest', 'rest', 'rest', 'rest', 'rest', 'a4', 'g4', 'f4', 'e4', 'rest',
 'd4', 'rest', 'c4', 'rest', 'rest', 'c5', 'rest', 'b4', 'a4', 'rest', 'rest', 'a4', 'rest', 'g4', 'f4', 'rest', 'rest', 'f4', 'rest',
 'e4', 'd4', 'c4', 'rest', 'rest', 'c4', 'rest', 'rest']
-
+ 
 #Acoustic guitar sounds
-guitarSounds = [pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_c.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_d.wav'),
+guitarSounds = [pygame.mixer.Sound('IndividualSounds/Piano/3_piano_c.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_d.wav'),
 pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_e.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_f.wav'),
 pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_g.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_a.wav'),
 pygame.mixer.Sound('IndividualSounds/AcousticGuitar/3_acoustic_b.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/4_acoustic_c.wav'),
@@ -96,6 +64,7 @@ pygame.mixer.Sound('IndividualSounds/AcousticGuitar/4_acoustic_d.wav'), pygame.m
 pygame.mixer.Sound('IndividualSounds/AcousticGuitar/4_acoustic_f.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/4_acoustic_g.wav'),
 pygame.mixer.Sound('IndividualSounds/AcousticGuitar/4_acoustic_a.wav'), pygame.mixer.Sound('IndividualSounds/AcousticGuitar/4_acoustic_b.wav'),
 pygame.mixer.Sound('IndividualSounds/AcousticGuitar/5_acoustic_c.wav')]
+#IndividualSounds/AcousticGuitar/3_acoustic_c.wav
 
 #Piano sounds
 pianoSounds = [pygame.mixer.Sound('IndividualSounds/Piano/3_piano_c.wav'), pygame.mixer.Sound('IndividualSounds/Piano/3_piano_d.wav'),
@@ -127,18 +96,7 @@ pygame.mixer.Sound('IndividualSounds/Xylophone/7_xylo_f.wav'), pygame.mixer.Soun
 pygame.mixer.Sound('IndividualSounds/Xylophone/7_xylo_a.wav'), pygame.mixer.Sound('IndividualSounds/Xylophone/7_xylo_b.wav'),
 pygame.mixer.Sound('IndividualSounds/Xylophone/8_xylo_c.wav')]
 
-############################################################################################################################################
-
-def redrawGamewindow():
-    if True:
-        screen.blit(keyboardLong, (141,220))
-    pygame.display.update()
-
-def highlightKey():
-    if True:
-        pygame.draw.rect(screen, (0, 0, 255), (x_pos, y_pos, 64, 86))
-    pygame.display.update()
-
+'''
 def autoplaySong(song, instrument):
     for i in song:
         if (i is 'c3'):
@@ -233,7 +191,37 @@ def autoplaySong(song, instrument):
             time.sleep(0.5)
         else:
             time.sleep(0.5)
-    redrawGamewindow()
+
+
+'''
+############################################################################################################################################
+
+pianoImage = pygame.image.load("piano.png")
+guitarImage = pygame.image.load("guitar.png")
+
+#Button Info
+rectHeight = 100
+rectWidth = 300
+smallWidth = 225
+rectDimensions = (rectHeight, rectWidth)
+leftButtonX = 40
+middleButtonX = 285
+rightButtonX = 530
+oneButtonX = 75
+twoButtonX = 425
+topButtonY = 75
+midButtonY = 150
+botButtonY = 225
+
+buttonFont = pygame.font.SysFont('Corbel',55, bold = True)
+backButtonFont = pygame.font.SysFont('Corbel',20, bold = True)
+pianoButton = buttonFont.render('PIANO' , True , white)
+guitarButton = buttonFont.render('GUITAR', True, white)
+freeButton = buttonFont.render('FREE PLAY', True, white)
+autoButton = buttonFont.render('AUTO PLAY', True, white)
+easyButton = buttonFont.render('EASY', True, white)
+hardButton = buttonFont.render('HARD', True, white)
+backButton = backButtonFont.render('BACK', True, white)
 
 class GameState():
     def __init__(self):
@@ -248,23 +236,21 @@ class GameState():
             if event.type == pygame.QUIT:
                 pygame.quit()
             if event.type == pygame.MOUSEBUTTONDOWN:             
-            #if the mouse is clicked on the
-            # button the game is terminated
-
-                #Piano Button
+            #If user clicks top- taken to piano
+            #bottom- taken to guitar
                 if oneButtonX <= mouse[0] <= oneButtonX + rectWidth and topButtonY <= mouse[1] <= topButtonY+rectHeight:
-                    self.state = 'main_game'
-                    instrumentSound = 'piano'
-                #Guitar Button
+                    self.state = 'piano_mode'
                 elif twoButtonX <= mouse[0] <= twoButtonX + rectWidth and topButtonY <= mouse[1] <= topButtonY+rectHeight:
-                    self.state = 'main_game'
-                    instrumentSound = 'guitar'
-        screen.fill((beige))   
-      
-        pygame.draw.rect(screen,brown,[oneButtonX,topButtonY,rectWidth,rectHeight])
-        pygame.draw.rect(screen,brown,[twoButtonX,topButtonY,rectWidth,rectHeight])
-        pygame.draw.rect(screen,brown,[oneButtonX,botButtonY,rectWidth,rectHeight]) 
-        pygame.draw.rect(screen,brown,[twoButtonX,botButtonY,rectWidth,rectHeight]) 
+                    self.state = 'guitar_mode'
+                elif twoButtonX <= mouse[0] <= twoButtonX + rectWidth and botButtonY <= mouse[1] <= botButtonY+rectHeight:
+                    self.state = 'autoplay_mode'
+                elif oneButtonX <= mouse[0] <= oneButtonX + rectWidth and botButtonY <= mouse[1] <= botButtonY+rectHeight:
+                    self.state = 'freeplay_mode'
+        screen.fill((beige))       
+        pygame.draw.rect(screen,brown,[oneButtonX,topButtonY,rectWidth,rectHeight]) #piano
+        pygame.draw.rect(screen,brown,[twoButtonX,topButtonY,rectWidth,rectHeight]) #guitar
+        pygame.draw.rect(screen,brown,[oneButtonX,botButtonY,rectWidth,rectHeight]) #freeplay
+        pygame.draw.rect(screen,brown,[twoButtonX,botButtonY,rectWidth,rectHeight]) #autoplay
         if oneButtonX <= mouse[0] <= oneButtonX+rectWidth and topButtonY <= mouse[1] <= topButtonY+rectHeight:
             pygame.draw.rect(screen,dark_gray,[oneButtonX,topButtonY,rectWidth,rectHeight])        
         elif twoButtonX <= mouse[0] <= twoButtonX+rectWidth and topButtonY <= mouse[1] <= topButtonY+rectHeight:   
@@ -278,28 +264,22 @@ class GameState():
         screen.blit(freeButton, (oneButtonX + 15, botButtonY + 22))
         screen.blit(autoButton, (twoButtonX + 8, botButtonY + 22))
 
-    def main_game(self):
+    def piano_mode(self):
+        instrumentSound = 'piano'
         mouse = pygame.mouse.get_pos() 
         for event in pygame.event.get():       
             if event.type == pygame.QUIT:
                 pygame.quit()
             if event.type == pygame.MOUSEBUTTONDOWN:             
-            #if the mouse is clicked on the
-            # button the game is terminated
-            #10 is x val  100 is y val
-
-                #Free Play
                 if oneButtonX <= mouse[0] <= oneButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
                     pygame.quit()
-                    self.state = 'free'
-                #Autoplay
                 elif twoButtonX <= mouse[0] <= twoButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
                     pygame.quit()
-                    self.state = 'auto'
-                #Back button
                 elif 5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
                     self.state = 'intro'   
         screen.fill((light_blue))
+        screen.blit(pianoImage,(15,-100))
+
         pygame.draw.rect(screen,dark_blue, [oneButtonX,midButtonY,rectWidth,rectHeight])
         pygame.draw.rect(screen,dark_blue, [twoButtonX,midButtonY,rectWidth,rectHeight])
         pygame.draw.rect(screen,dark_blue, [5, 10, 60, 25])
@@ -314,170 +294,244 @@ class GameState():
         screen.blit(hardButton, (twoButtonX + 80, midButtonY + 22))
         screen.blit(backButton, (10,13))
 
-    '''
-    def freePlay(self, instrument):
-        width = 1250 #800
-        height = 700 #437
-        instrument = instrumentSound
-        screen = pygame.display.set_mode((width,height))
-        screen.fill((199,187,143))
-        pygame.display.set_caption("Free Play")
-        pygame.display.flip()
-        redrawGamewindow()
-
+    def guitar_mode(self):
+        instrumentSound = 'guitar'
+        mouse = pygame.mouse.get_pos() 
         for event in pygame.event.get():       
             if event.type == pygame.QUIT:
                 pygame.quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:             
+            #if the mouse is clicked on the
+            # button the game is terminated
+            #10 is x val  100 is y val
+                if oneButtonX <= mouse[0] <= oneButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+                    pygame.quit()
+                elif twoButtonX <= mouse[0] <= twoButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+                    pygame.quit()
+                elif 5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
+                    self.state = 'intro'   
+        screen.fill((light_green))
+        screen.blit(guitarImage,(150,5))
 
+        pygame.draw.rect(screen,dark_green, [oneButtonX,midButtonY,rectWidth,rectHeight])
+        pygame.draw.rect(screen,dark_green, [twoButtonX,midButtonY,rectWidth,rectHeight])
+        pygame.draw.rect(screen,dark_green, [5, 10, 60, 25])
+        if oneButtonX <= mouse[0] <= oneButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+            pygame.draw.rect(screen,dark_gray, [oneButtonX,midButtonY,rectWidth,rectHeight])     
+        elif twoButtonX <= mouse[0] <= twoButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:  
+            pygame.draw.rect(screen,dark_gray, [twoButtonX,midButtonY,rectWidth,rectHeight])
+        elif  5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
+            pygame.draw.rect(screen,dark_gray, [5, 10, 60,25])
+      
+        screen.blit(easyButton, (oneButtonX + 80, midButtonY + 22))
+        screen.blit(hardButton, (twoButtonX + 80, midButtonY + 22))
+        screen.blit(backButton, (10,13))
+
+    def freeplay_mode(self):
+        mouse = pygame.mouse.get_pos() 
+        for event in pygame.event.get():       
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:             
+                if oneButtonX <= mouse[0] <= oneButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+                    instrumentSound = 'piano'
+                    self.state = 'sound'
+                elif twoButtonX <= mouse[0] <= twoButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+                    instrumentSound = 'guitar'
+                    self.state = 'sound'
+                elif 5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
+                    self.state = 'intro'   
+        screen.fill((light_gray))
+
+
+        pygame.draw.rect(screen,dark_green, [oneButtonX,midButtonY,rectWidth,rectHeight])
+        pygame.draw.rect(screen,dark_green, [twoButtonX,midButtonY,rectWidth,rectHeight])
+        pygame.draw.rect(screen,dark_green, [5, 10, 60, 25])
+        if oneButtonX <= mouse[0] <= oneButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+            pygame.draw.rect(screen,dark_gray, [oneButtonX,midButtonY,rectWidth,rectHeight])     
+        elif twoButtonX <= mouse[0] <= twoButtonX+rectWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:  
+            pygame.draw.rect(screen,dark_gray, [twoButtonX,midButtonY,rectWidth,rectHeight])
+        elif  5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
+            pygame.draw.rect(screen,dark_gray, [5, 10, 60,25])
+      
+        screen.blit(pianoButton, (oneButtonX + 80, midButtonY + 22))
+        screen.blit(guitarButton, (twoButtonX + 80, midButtonY + 22))
+        screen.blit(backButton, (10,13))
+
+
+    def autoplay_mode(self):
+        mouse = pygame.mouse.get_pos() 
+        for event in pygame.event.get():       
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:             
+            #if the mouse is clicked on the
+            # button the game is terminated
+            #10 is x val  100 is y val
+                if oneButtonX <= mouse[0] <= oneButtonX+smallWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+                    pygame.quit()
+                elif twoButtonX <= mouse[0] <= twoButtonX+smallWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+                    pygame.quit()
+                elif 5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
+                    self.state = 'intro'   
+        screen.fill((light_red))
+        pygame.draw.rect(screen,dark_red, [leftButtonX,midButtonY,smallWidth,rectHeight])
+        pygame.draw.rect(screen,dark_red, [middleButtonX,midButtonY,smallWidth,rectHeight])
+        pygame.draw.rect(screen,dark_red, [rightButtonX,midButtonY,smallWidth,rectHeight])
+        pygame.draw.rect(screen,dark_red, [5, 10, 60, 25])
+        if leftButtonX <= mouse[0] <= leftButtonX+smallWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:
+            pygame.draw.rect(screen,dark_gray, [leftButtonX,midButtonY,smallWidth,rectHeight])     
+        elif middleButtonX <= mouse[0] <= middleButtonX+smallWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight:  
+            pygame.draw.rect(screen,dark_gray, [middleButtonX,midButtonY,smallWidth,rectHeight])
+        elif rightButtonX <= mouse[0] <= rightButtonX+smallWidth and midButtonY <= mouse[1] <= midButtonY+rectHeight: 
+            pygame.draw.rect(screen,dark_gray, [rightButtonX,midButtonY,smallWidth,rectHeight])
+        elif  5 <= mouse[0] <= 5+80 and 10 <= mouse[1] <= 10+40:
+            pygame.draw.rect(screen,dark_gray, [5, 10, 60,25])
+      
+        screen.blit(easyButton, (leftButtonX + 40, midButtonY + 22))
+        screen.blit(hardButton, (middleButtonX + 40, midButtonY + 22))
+        screen.blit(hardButton, (rightButtonX + 40, midButtonY + 22))
+        screen.blit(backButton, (10,13))
+
+    def sound(self):
+        for event in pygame.event.get():       
+            if event.type == pygame.QUIT:
+                pygame.quit()
+        res = (1250,700)
+        screen = pygame.display.set_mode(res)
+        screen.fill(light_gray)
+        screen.blit(keyboardLong, (141,220))
+
+        pianoSounds = [pygame.mixer.Sound('IndividualSounds/Piano/3_piano_c.wav'), pygame.mixer.Sound('IndividualSounds/Piano/3_piano_d.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/3_piano_e.wav'), pygame.mixer.Sound('IndividualSounds/Piano/3_piano_f.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/3_piano_g.wav'), pygame.mixer.Sound('IndividualSounds/Piano/3_piano_a.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/3_piano_b.wav'), pygame.mixer.Sound('IndividualSounds/Piano/4_piano_c.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/4_piano_d.wav'), pygame.mixer.Sound('IndividualSounds/Piano/4_piano_e.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/4_piano_f.wav'), pygame.mixer.Sound('IndividualSounds/Piano/4_piano_g.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/4_piano_a.wav'), pygame.mixer.Sound('IndividualSounds/Piano/4_piano_b.wav'),
+                pygame.mixer.Sound('IndividualSounds/Piano/5_piano_c.wav')]
+
+        instrument = instrumentSound
         keys = pygame.key.get_pressed()
-        x = 141
-        while True:
-            redrawGamewindow()
-            if keys[pygame.K_a]:
-                highlightKey()
-                if (instrument is 'piano'):
-                        pianoSounds[0].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[0].play()
-                elif (instrument is 'electric'):
-                    electricSounds[0].play()
-            if keys[pygame.K_s]:
-                x += 64
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[1].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[1].play()
-                elif (instrument is 'electric'):
-                        electricSounds[1].play()
-            if keys[pygame.K_d]:
-                x += (64 * 2)
-                highlightKey()
-                if (instrument is 'piano'):
-                   pianoSounds[2].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[2].play()
-                elif (instrument is 'electric'):
-                    electricSounds[2].play()
-            if keys[pygame.K_f]:
-                x += (64 * 3)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[3].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[3].play()
-                elif (instrument is 'electric'):
-                    electricSounds[3].play()
-            if keys[pygame.K_g]:
-                x += (64 * 4)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[4].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[4].play()
-                elif (instrument is 'electric'):
-                     electricSounds[4].play()
-            if keys[pygame.K_h]:
-                x += (64 * 5)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[5].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[5].play()
-                elif (instrument is 'electric'):
-                    electricSounds[5].play()
-            if keys[pygame.K_j]:
-                x += (64 * 6)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[6].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[6].play()
-                elif (instrument is 'electric'):
-                    electricSounds[6].play()
-            if keys[pygame.K_q]:
-                x += (64 * 7)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[7].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[7].play()
-                elif (instrument is 'electric'):
-                    electricSounds[7].play()
-            if keys[pygame.K_w]:
-                x += (64 * 8)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[8].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[8].play()
-                elif (instrument is 'electric'):
-                    electricSounds[8].play()
-            if keys[pygame.K_e]:
-                x += (64 * 9)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[9].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[9].play()
-                elif (instrument is 'electric'):
-                    electricSounds[9].play()
-            if keys[pygame.K_r]:
-                x += (64 * 10)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[10].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[10].play()
-                elif (instrument is 'electric'):
-                    electricSounds[10].play()
-            if keys[pygame.K_t]:
-                x += (64 * 11)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[11].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[11].play()
-                elif (instrument is 'electric'):
-                    electricSounds[11].play()
-            if keys[pygame.K_y]:
-                x += (64 * 12)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[12].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[12].play()
-                elif (instrument is 'electric'):
-                    electricSounds[12].play()
-            if keys[pygame.K_u]:
-                x += (64 * 13)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[13].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[13].play()
-                elif (instrument is 'electric'):
-                    electricSounds[13].play()
-            if keys[pygame.K_i]:
-                x += (64 * 14)
-                highlightKey()
-                if (instrument is 'piano'):
-                    pianoSounds[14].play()
-                elif (instrument is 'guitar'):
-                    guitarSounds[14].play()
-                elif (instrument is 'electric'):
-                    electricSounds[14].play()
-            time.sleep(0.075)
-            x = 141
-    '''
-        
+        if keys[pygame.K_a]:
+            if (instrument is 'piano'):
+                pianoSounds[0].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[0].play()
+            elif (instrument is 'electric'):
+                electricSounds[0].play()
+        if keys[pygame.K_s]:
+            if (instrument is 'piano'):
+                pianoSounds[1].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[1].play()
+            elif (instrument is 'electric'):
+                electricSounds[1].play()
+        if keys[pygame.K_d]:
+            if (instrument is 'piano'):
+                pianoSounds[2].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[2].play()
+            elif (instrument is 'electric'):
+                electricSounds[2].play()
+        if keys[pygame.K_f]:
+            if (instrument is 'piano'):
+                pianoSounds[3].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[3].play()
+            elif (instrument is 'electric'):
+                electricSounds[3].play()
+        if keys[pygame.K_g]:
+            if (instrument is 'piano'):
+                pianoSounds[4].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[4].play()
+            elif (instrument is 'electric'):
+                electricSounds[4].play()
+        if keys[pygame.K_h]:
+            if (instrument is 'piano'):
+                pianoSounds[5].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[5].play()
+            elif (instrument is 'electric'):
+                electricSounds[5].play()
+        if keys[pygame.K_j]:
+            if (instrument is 'piano'):
+                pianoSounds[6].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[6].play()
+            elif (instrument is 'electric'):
+                electricSounds[6].play()
+        if keys[pygame.K_q]:
+            if (instrument is 'piano'):
+                pianoSounds[7].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[7].play()
+            elif (instrument is 'electric'):
+                electricSounds[7].play()
+        if keys[pygame.K_w]:
+            if (instrument is 'piano'):
+                pianoSounds[8].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[8].play()
+            elif (instrument is 'electric'):
+                electricSounds[8].play()
+        if keys[pygame.K_e]:
+            if (instrument is 'piano'):
+                pianoSounds[9].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[9].play()
+            elif (instrument is 'electric'):
+                electricSounds[9].play()
+        if keys[pygame.K_r]:
+            if (instrument is 'piano'):
+                pianoSounds[10].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[10].play()
+            elif (instrument is 'electric'):
+                electricSounds[10].play()
+        if keys[pygame.K_t]:
+            if (instrument is 'piano'):
+                pianoSounds[11].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[11].play()
+            elif (instrument is 'electric'):
+                electricSounds[11].play()
+        if keys[pygame.K_y]:
+            if (instrument is 'piano'):
+                pianoSounds[12].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[12].play()
+            elif (instrument is 'electric'):
+                electricSounds[12].play()
+        if keys[pygame.K_u]:
+            if (instrument is 'piano'):
+                pianoSounds[13].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[13].play()
+            elif (instrument is 'electric'):
+                electricSounds[13].play()
+        if keys[pygame.K_i]:
+            if (instrument is 'piano'):
+                pianoSounds[14].play()
+            elif (instrument is 'guitar'):
+                guitarSounds[14].play()
+            elif (instrument is 'electric'):
+                electricSounds[14].play()
+
     def state_manager(self):
         if self.state == 'intro':
             self.intro()
-        if self.state =='main_game':
-            self.main_game()
-        if self.state == 'free':
-            self.freePlay()
+        if self.state =='piano_mode':
+            self.piano_mode()
+        if self.state == 'guitar_mode':
+            self.guitar_mode()
+        if self.state == 'autoplay_mode':
+            self.autoplay_mode()
+        if self.state == 'freeplay_mode':
+            self.freeplay_mode()
+        if self.state == 'sound':
+            self.sound()
 
 game_state = GameState()
 while True:
